@@ -1,0 +1,27 @@
+:root {
+    --dark-color: rgb(0, 68, 156);
+    --medium-color: rgb(59, 109, 160);
+    --light-color: rgb(90, 214, 214);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgb(90, 214, 214);
+    padding: 2rem;
+}
+
+header {
+    height: 95vh;
+    background-image: url(img/landscape.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
