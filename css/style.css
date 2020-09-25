@@ -1,7 +1,7 @@
 :root {
-    --dark-color: rgb(0, 68, 156);
-    --medium-color: rgb(59, 109, 160);
-    --light-color: rgb(90, 214, 214);
+    --dark-color: rgba(0, 0, 0, 0.65);
+    --medium-color: rgba(0, 20, 110, 0.45);
+    --light-color: rgba(0, 255, 255, 0.65);
 }
 
 *{
@@ -14,14 +14,107 @@ body {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     line-height: 1.7;
-    color: rgb(90, 214, 214);
+    color: rgba(0, 11, 61, 0.55);
     padding: 2rem;
 }
 
 header {
     height: 95vh;
-    background-image: url(img/landscape.jpg);
+    background-image: linear-gradient(to bottom right, var(--light-color), var(--medium-color)), url('../img/landscape.jpg');
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+}
+
+.logo {
+    height: 2.7rem;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: white;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    text-align: center;
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    animation-name: heading-main;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes heading-main {
+    0% {opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px)
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.heading-primary-sub {
+    display: block;
+    animation-name: heading-sub;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    letter-spacing: 0.5rem;
+    text-align: center;
+}
+
+@keyframes heading-sub {
+    0% {opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px)
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.btn {
+    display: inline-block;
+    color: white;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-58%, -50%);
+    text-decoration: none;
+    border: 3px solid white;
+    padding: 0.5rem;
+    margin: 1rem;
+    opacity: 0;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transition-property: transform;
+    transition-duration: 3s;
+}
+
+@keyframes btn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
